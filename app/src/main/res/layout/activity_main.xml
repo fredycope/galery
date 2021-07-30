@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false">
+        <fragment
+               android:id="@+id/nav_host_fragment"
+               android:name="androidx.navigation.fragment.NavHostFragment"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               app:defaultNavHost = "true"
+               app:navGraph="@navigation/nav_graph"
+               />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        style="@style/Widget.App.BottomAppBar"
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_gravity="bottom"
+        app:fabCradleMargin="15dp"
+        app:fabCradleVerticalOffset="5dp"
+        app:fabAlignmentMode="center"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        >
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bttm_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:menu="@menu/bottom_app_bar"
+            app:elevation="0dp"
+            android:alpha="0.5"
+            app:itemIconTint="@color/zyan"
+            app:backgroundTint="@android:color/transparent"
+            />
+        <!--LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/ib_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_home"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textColor="#FFFFFF"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/ib_fav"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_favorite"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@mipmap/ic_launcher"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textColor="#FFFFFF"
+                android:visibility="invisible"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_location"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textColor="#FFFFFF"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_settings"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout-->
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_add"
+        app:layout_anchor="@id/bottomAppBar"
+        style="@style/Widget.App.FloatingActionButton"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
